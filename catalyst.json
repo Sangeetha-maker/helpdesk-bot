@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "targets": [
+      "ticket_mate_function"
+    ],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "client"
+  }
+}

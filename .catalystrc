@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "25204000000012001",
+      "name": "TicketMate",
+      "domain": {
+        "id": "50035941755",
+        "name": "ticketmate-60058515555.development"
+      },
+      "timezone": "Asia/Kolkata",
+      "env": [
+        {
+          "idx": 1,
+          "id": "60058515555",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}
