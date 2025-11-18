@@ -42,6 +42,21 @@ st.markdown("""
         box-shadow:0 8px 28px rgba(255,145,77,0.13); margin-bottom:22px;}
     .accent-title {color: #FF914D !important; text-shadow: 0 0 12px #1598FF;}
     .accent-hr {border: 1px solid #FF914D; border-radius: 6px; margin-bottom: 12px;}
+        
+    /* --- Make Priority Dropdown Options Visible in Black --- */
+    [data-baseweb="select"] > div {
+        color: #000 !important;
+        background-color: #fff !important;
+    }
+    [data-baseweb="select"] div[role="option"] {
+        color: #000 !important;
+        background-color: #fff !important;
+        font-weight: bold !important;
+    }
+    [data-baseweb="select"] div[role="option"]:hover {
+        background-color: #e8e8e8 !important;
+        color: #000 !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -197,7 +212,7 @@ elif menu == "🆕 Create Ticket":
                         st.balloons()
                         progress_meter(3, 3, "Step 3: Ticket Created!")
                         glass_card_box(f"""
-                            <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:#FF914D;'>#{ticket.get('ticketNumber')}</span><br>
+                            <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:black;'>#{ticket.get('ticketNumber')}</span><br>
                             <b style='color:#1598FF;'>Status:</b> {ticket.get('status')}<br>
                             You will receive updates via email at: <span style='color:#FF914D;'>{email}</span>
                         """)
