@@ -212,7 +212,7 @@ elif menu == "🆕 Create Ticket":
                         st.balloons()
                         progress_meter(3, 3, "Step 3: Ticket Created!")
                         glass_card_box(f"""
-                            <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:#000 !important;'>#{ticket.get('ticketNumber')}</span><br>
+                            <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:#FF914D;'>#{ticket.get('ticketNumber')}</span><br>
                             <b style='color:#1598FF;'>Status:</b> {ticket.get('status')}<br>
                             You will receive updates via email at: <span style='color:#FF914D;'>{email}</span>
                         """)
