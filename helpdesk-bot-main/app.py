@@ -212,24 +212,27 @@ elif menu == "🆕 Create Ticket":
         description = st.text_area("📄 Description *", placeholder="Describe your issue in detail...", height=150)
         submitted = st.form_submit_button("🚀 CREATE TICKET", use_container_width=True)
         if submitted:
-            progress_meter(2, 3, "Step 2: Creating Ticket...")
-            if not email or not subject or not description:
-                st.error("❌ Please fill all required fields marked with *")
+    progress_meter(2, 3, "Step 2: Creating Ticket...")
+    if not email or not subject or not description:
+        st.error("❌ Please fill all required fields marked with *")
+    else:
+        with st.spinner("Creating ticket..."):
+            result = zoho.create_ticket(subject, description, email, priority)
+            if result['success']:
+                ticket = result['data']
+                st.success("✅ Ticket created successfully!")
+                st.balloons()
+                progress_meter(3, 3, "Step 3: Ticket Created!")
+                st.markdown(f"""
+                    <div class="glass-card">
+                        <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:#FF914D;'>#{ticket.get('ticketNumber')}</span><br>
+                        <b style='color:#1598FF;'>Status:</b> {ticket.get('status')}<br>
+                        You will receive updates via email at: <span style='color:#FF914D;'>{email}</span>
+                    </div>
+                """, unsafe_allow_html=True)
             else:
-                with st.spinner("Creating ticket..."):
-                    result = zoho.create_ticket(subject, description, email, priority)
-                    if result['success']:
-                        ticket = result['data']
-                        st.success("✅ Ticket created successfully!")
-                        st.balloons()
-                        progress_meter(3, 3, "Step 3: Ticket Created!")
-                        glass_card_box(f"""
-                            <b style='color:#1598FF;'>Ticket Number:</b> <span style='color:#FF914D;'>#{ticket.get('ticketNumber')}</span><br>
-                            <b style='color:#1598FF;'>Status:</b> {ticket.get('status')}<br>
-                            You will receive updates via email at: <span style='color:#FF914D;'>{email}</span>
-                        """)
-                    else:
-                        st.error(f"❌ Failed to create ticket: {result['error']}")
+                st.error(f"❌ Failed to create ticket: {result['error']}")
+
 
 # ----------------- SEARCH TICKETS INTERFACE -----------------
 elif menu == "🔍 Search Tickets":
