@@ -111,7 +111,7 @@ zoho = get_api()
 
 # ----- Sidebar -----
 with st.sidebar:
-    st.image("logo.png", width=120)  # Optional: add/remove your own logo file here
+    
     st.title("🎫 Helpdesk Bot")
     st.markdown("---")
     menu = st.radio(
