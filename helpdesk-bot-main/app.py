@@ -39,27 +39,24 @@ st.markdown("""
         font-weight: bold !important;
     }
     .glass-card {
-    background: rgba(21,152,255,0.08); 
-    border-radius:18px; 
-    padding:26px 34px 22px 34px;
-    box-shadow:0 8px 28px rgba(255,145,77,0.13); 
-    margin-bottom:22px;
-}
-
-/* NEW: Force glass card content to be visible */
-.glass-card * {
-    color: #1a1a1a !important;
-}
-
-.glass-card b {
-    color: #1598FF !important;
-}
-
-.glass-card span[style*="color:#FF914D"] {
-    color: #FF914D !important;
-}
-
-        
+        background: rgba(21,152,255,0.08); 
+        border-radius:18px; 
+        padding:26px 34px 22px 34px;
+        box-shadow:0 8px 28px rgba(255,145,77,0.13); 
+        margin-bottom:22px;
+    }
+    .glass-card * {
+        color: #2d2d2d !important;
+    }
+    .glass-card b {
+        color: #1598FF !important;
+    }
+    .glass-card span[style*="color:#FF914D"] {
+        color: #FF914D !important;
+    }
+    .accent-title {color: #FF914D !important; text-shadow: 0 0 12px #1598FF;}
+    .accent-hr {border: 1px solid #FF914D; border-radius: 6px; margin-bottom: 12px;}
+    
     /* --- Make Priority Dropdown Options Visible in Black --- */
     [data-baseweb="select"] > div {
         color: #000 !important;
@@ -128,7 +125,6 @@ zoho = get_api()
 
 # ----- Sidebar -----
 with st.sidebar:
-    
     st.title("🎫 Helpdesk Bot")
     st.markdown("---")
     menu = st.radio(
@@ -144,7 +140,6 @@ with st.sidebar:
     - Add comment: Use chat
     </div>
 """, unsafe_allow_html=True)
-
 
 # ----- Initialize session state -----
 if "messages" not in st.session_state:
