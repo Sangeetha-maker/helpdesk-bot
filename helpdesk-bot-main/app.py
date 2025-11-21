@@ -46,7 +46,7 @@ st.markdown("""
         margin-bottom:22px;
     }
     .glass-card * {
-        color: #2d2d2d !important;
+        color: #f0f0f0 !important;
     }
     .glass-card b {
         color: #1598FF !important;
